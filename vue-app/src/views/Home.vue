@@ -1,18 +1,37 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="content" id="home-content">
+    <Video
+      :key="video.id"
+      v-for="video in videos"
+      :video="video"
+      :data-id="video.id"
+    ></Video>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Video from "../components/Video";
+import API from "../api";
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  name: "Home",
+  components: { Video },
+  data() {
+    return {
+      videos: [],
+    };
+  },
+  async created() {
+    this.videos = await API.getProductList();
+  },
+};
 </script>
+
+<style scoped>
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 3rem;
+}
+</style>

@@ -1,0 +1,81 @@
+{
+  "consumer": {
+    "name": "Frontend"
+  },
+  "provider": {
+    "name": "Backend"
+  },
+  "interactions": [
+    {
+      "description": "a request not empty for video list",
+      "providerState": "get video list successfully",
+      "request": {
+        "method": "GET",
+        "path": "/videos"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "body": [
+          {
+            "id": 1,
+            "title": "Vue.js Course for Beginners [2021 Tutorial]",
+            "description": "Learn Vue 3 by in this full course. Vue.js is an open-source model–view–view model front end JavaScript framework for building user interfaces and single-page applications.",
+            "hoverImage": "https://raw.githubusercontent.com/modanisa/bootcamp-video-db/main/video-images/1-hover.webp",
+            "coverImage": "https://raw.githubusercontent.com/modanisa/bootcamp-video-db/main/video-images/1-cover.webp",
+            "ownerImage": "https://yt3.ggpht.com/ytc/AKedOLTtJvQ1Vfew91vemeLaLdhjOwGx3tTBLlreK_QUyA=s68-c-k-c0x00ffffff-no-rj",
+            "ownerName": "freeCodeCamp.org",
+            "publishDateInMonth": 4,
+            "videoAddress": "https://www.youtube.com/watch?v=FXpIoQ_rT_c",
+            "viewCount": 254
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "min": 1
+          },
+          "$.body[*].*": {
+            "match": "type"
+          },
+          "$.body[*].id": {
+            "match": "type"
+          },
+          "$.body[*].title": {
+            "match": "type"
+          },
+          "$.body[*].description": {
+            "match": "type"
+          },
+          "$.body[*].hoverImage": {
+            "match": "type"
+          },
+          "$.body[*].coverImage": {
+            "match": "type"
+          },
+          "$.body[*].ownerImage": {
+            "match": "type"
+          },
+          "$.body[*].ownerName": {
+            "match": "type"
+          },
+          "$.body[*].publishDateInMonth": {
+            "match": "type"
+          },
+          "$.body[*].videoAddress": {
+            "match": "type"
+          },
+          "$.body[*].viewCount": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

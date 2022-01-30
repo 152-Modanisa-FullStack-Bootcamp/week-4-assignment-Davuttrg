@@ -17,6 +17,7 @@
   },
   "puppeteerOptions": {
     "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true",
-    "PUPPETEER_EXECUTABLE_PATH": "which chromium"
+    "PUPPETEER_EXECUTABLE_PATH": "which chromium",
+    "headless": true
   }
 }
